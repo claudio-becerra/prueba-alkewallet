@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- FONT AWESOME -->
+    <script src="https://kit.fontawesome.com/90f957e0cb.js" crossorigin="anonymous"></script>
+    <!-- JQUERY -->
+    <script src="../jquery-4.0.0.min.js" defer></script>
+    <script src="../js/sendmoney.js" defer></script>
+    <title>MyWallet - Send Money</title>
+</head>
+
+<body>
+    <header>
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="logo">
+                <img src="../img/Alke_wallet_logo.png" alt="logo Alkewallet">
+            </div>
+            <nav class="d-none d-md-block">
+                <div class="nav-desktop">
+                    <ul class="d-flex gap-5">
+                        <li><a href="menu.html"><span>Home</span></a></li>
+                        <li><a href="sendmoney.html"><span class="actual">Transferir</span></a></li>
+                        <li><a href="transactions.html"><span>Transacciones</span></a></li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="div">
+                <img src="../img/perfil_img.png" alt="imagen de perfil" class="perfil-img">
+            </div>
+        </div>
+    </header>
+
+    <div class="container  content-max-width">
+        <h2>Enviar Dinero</h2>
+        <form id="form-contactos">
+            <div class="form-group">
+                <label for="contacto">Buscar en tus contactos:</label>
+                <input type="text" class="form-control" id="contacto" placeholder="Buscar Contacto">
+            </div>
+            <h3>Contactos</h3>
+            <ul id="lista-contactos" class="list-group">
+
+            </ul>
+                <button type="submit" class="btn btn-primary">Agregar nuevo contacto</button>
+        </form>
+        <a href="menu.html" class="btn btn-secondary hide">Volver al Menú Principal</a>
+    </div>
+    <nav>
+        <div class="nav-mobile d-md-none">
+            <ul class="d-flex ">
+                <li><a href="menu.html"><i class="fa-solid fa-house"></i></a></li>
+                <li><a href="sendmoney.html"><i class="fa-solid fa-money-bill-transfer actual"></i></a></li>
+                <li><a href="transactions.html"><i class="fa-solid fa-money-bill"></a></i></li>
+            </ul>
+        </div>
+    </nav>
+
+    <dialog id="modal-agregar-contacto">
+        <div class="text-end">
+            <i class="fa-solid fa-x" id="close-contacto"></i>
+        </div>
+        <form  id="form-nuevo-contacto">
+            <div class="form-duo">
+                <label for="nombre" class="form-label">Nombre:</label>
+                <input type="text" class="form-control" id="nombre" placeholder="Ingrese nombre" required>
+            </div>
+            <div class="form-duo">
+                <label for="apellido" class="form-label">Apellido:</label>
+                <input type="text" class="form-control" id="apellido" placeholder="Ingrese apellido" required>
+            </div>
+            <div class="form-duo">
+                <label for="num-cuenta" class="form-label">Número de cuenta:</label>
+                <input type="text" class="form-control" id="num-cuenta" placeholder="Ingrese número de cuenta" required>
+                <div id="num-cuenta-alert" class="alert-danger input-alert hide">
+                    <span class="alert-span">El número de cuenta debe tener 9 dígitos</span>
+                </div>
+            </div>
+            <div class="form-duo">
+                <label for="alias" class="form-label">Alias:</label>
+                <input type="text" class="form-control" id="alias" placeholder="Ingrese alias" required>
+            </div>
+            <div class="form-duo">
+                <label for="nombre-banco" class="form-label">Nombre del banco:</label>
+                <input type="text" class="form-control" id="nombre-banco" placeholder="Ingrese nombre del banco" required>
+            </div>
+            <button type="submit" class="btn">Agregar contacto</button>
+        </form>
+    </dialog>
+    <dialog id="modal-enviar-dinero">
+        <div class="text-end">
+            <i class="fa-solid fa-x" id="close-transferir"></i>
+        </div>
+        <form id="form-transferir" >
+            <h3>Transferir a <span id="nombre-destinatario"></span></h3>
+            <div class="form-duo">
+                <label for="monto-transferencia" class="form-label">Monto:</label>
+                <input type="number" class="form-control" id="monto-transferencia" placeholder="Ingrese monto" required>
+            </div>
+            <button type="submit" class="btn">Transferir</button>
+        </form>
+    </dialog>
+
+
+    <!-- INTEGRAMOS EL CDN DE JS DE BOOTSTRAP -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>l
